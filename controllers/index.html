@@ -1,0 +1,19 @@
+<html ng-app="PetShop">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="controllers/animals.js"></script>
+    <meta charset="UTF-8"/>
+    <title>{{name}} petshop</title>
+  </head>
+  <body ng-controller="AnimalsCtrl">
+    <div>
+      <span>Olá, seja bem vindo {{customer}} ao site do petshop {{$parent.name}}</span>
+
+      <br><br>
+
+      <span>Qual seu nome?</span>
+      <input type="text" ng-model="customer"/>
+      <button ng-click="welcome()">Seja bem vindo</button>
+    </div>
+  </body>
+</html>
