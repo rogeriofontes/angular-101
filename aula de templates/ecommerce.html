@@ -1,0 +1,28 @@
+<html ng-app="Ecommerce">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script src="http://angular-ui.github.io/bootstrap/ui-bootstrap-tpls-0.10.0.js"></script>
+
+    <script type="text/javascript" src="controllers/ecommerce.js"></script>
+    <script type="text/javascript" src="controllers/modal-instance.js"></script>
+
+    <meta charset="UTF-8"/>
+    <title>Exemplo de modal</title>
+
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+  <body ng-controller="EcommerceCtrl">
+    <button ng-click="openModal()">Reabrir o modal</button>
+
+    <!-- O conteúdo poderia estar em um arquivo ao invés de um script -->
+    <script type="text/ng-template" id="modal.html">
+        <div class="modal-header">
+            <button type="button" class="close" ng-click="$close(false)">&times;</button>
+            <h3>Eu sou um modal!</h3>
+        </div>
+        <div class="modal-body">
+            Produtos disponíveis: camisetas, bonés e chinelos
+        </div>
+    </script>
+  </body>
+</html>

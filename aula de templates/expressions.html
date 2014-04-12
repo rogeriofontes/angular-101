@@ -1,0 +1,33 @@
+<html ng-app="PizzaShow">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="controllers/pizzaiolos.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Mama mia pizzaria!</title>
+  </head>
+  <body ng-controller="PizzaioloCtrl">
+    <div>
+      <span>Ma yo no falo italiano bambino! Vai de português mesmo.. hahaha. Seja bem vindo a melhor pizzaria da melhor cidade do Brasil (Uberlândia).</span>
+
+      <br><br>
+
+      <span>Nós temos as seguintes opções:</span><br/><br/>
+      <div ng-repeat="pizza in pizzas">
+        <strong>Nome:</strong><span> {{pizza.name}}</span><br/>
+        <strong>Ingredientes:</strong>
+        <ul>
+          <li ng-repeat="ingredient in pizza.ingredients">{{ingredient}}</li>
+        </ul>
+      </div><br/><br/>
+
+      <span>Entre para a lista dos nossos clientes mais fiéis e coma de graça:</span><br/><br/>
+      <div ng-repeat="customer in customers">
+        <strong>Nome:</strong><span> {{customer.name}}</span><br/>
+        <strong>Histórico de pizzas:</strong><br/>
+        <div ng-repeat="(pizza, times) in customer.history">
+          <span> Comeu a pizza "{{pizza}}" {{times}} vezes</span><br/><br/>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

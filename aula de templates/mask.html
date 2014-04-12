@@ -1,0 +1,15 @@
+<html ng-app="Mask">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script src="http://angular-ui.github.io/ui-utils/dist/ui-utils.js"></script>
+
+    <script src="controllers/mask.js"></script>
+
+    <meta charset="UTF-8"/>
+    <title>O máscara :)</title>
+  </head>
+  <body ng-controller="MaskCtrl">
+    <span>Data de nascimento: </span>
+    <input type="text" required ng-model="recruit.birthday" ui-mask="99/99/9999"/>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+<html ng-app="Outlet">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="controllers/clothes.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Roupas.com</title>
+  </head>
+  <body ng-controller="ClothesCtrl">
+    <div>
+      <span>Por favor, selecione seu gênero:</span><br/>
+
+      <input type="radio" name="gender" value="male" ng-model="gender"/>
+      <span>Masculino</span><br/>
+
+      <input type="radio" name="gender" value="female" ng-model="gender"/>
+      <span>Feminino</span><br/>
+
+      <br/><br/>
+
+      <div ng-switch on="gender">
+        <div ng-switch-when="female">
+          <div ng-include="'_female-clothes.html'"></div>
+        </div>
+        <div ng-switch-when="male">
+          <div ng-include="'_male-clothes.html'"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

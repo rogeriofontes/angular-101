@@ -1,0 +1,50 @@
+<html ng-app="Army">
+  <head>
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="controllers/army.js"></script>
+    <meta charset="UTF-8"/>
+    <title>Tio Sam quer você</title>
+  </head>
+  <body ng-controller="ArmyCtrl">
+    <span>Preencha o formulário abaixo para se alistar no exército:</span><br/>
+
+    <form novalidate name="assignment" ng-submit="assign(recruit)">
+      <span>Nome: </span>
+      <input type="text" required ng-model="recruit.name" ng-minlength="10" ng-maxlength="50"/>
+      <br/>
+
+      <span>Peso (em kg): </span>
+      <input type="number" required ng-model="recruit.weight"/>
+      <br/>
+ 
+      <span>Gênero: </span>
+      <br/>
+
+      <input type="radio" name="recruit.gender" required value="male" ng-model="recruit.gender"/>
+      <span>Masculino</span>
+      <br/>
+
+      <input type="radio" name="recruit.gender" required value="female" ng-model="recruit.gender"/>
+      <span>Feminino</span>
+      <br/>
+
+      <span>Data de nascimento: </span>
+      <input type="text" required ng-model="recruit.birthday" ng-pattern="/^\d{2}\/\d{2}\/\d{4}$/"/>
+      <br/>
+
+      <div>
+        <span ng-show="assignment.$invalid">
+          O formulário encontra-se inválido :(
+        </span>
+
+        <span ng-show="assignment.$valid">
+          O formulário encontra-se válido! Yay ;)
+        </span>
+
+        <br>
+      </div>
+
+      <button type="submit" ng-disabled="assignment.$invalid">Alistar</button>
+    </form>
+  </body>
+</html>
